@@ -60,7 +60,7 @@ class Movie(models.Model):
         verbose_name='актеры',
         related_name='film_actor'
     )
-    genres = models.ManyToManyField(Actor, verbose_name='жанры')
+    genres = models.ManyToManyField(Genre, verbose_name='жанры')
     world_premiere = models.DateField("Премьера в мире", default=date.today)
     budget = models.PositiveIntegerField("Бюджет", default=0, help_text='указывать сумму в долларах')
     fees_in_usa = models.PositiveIntegerField("Сборы в США", default=0, help_text='указывать сумму в долларах')
@@ -143,3 +143,4 @@ class Reviews(models.Model):
     class Meta:
         verbose_name = "Отзыв"
         verbose_name_plural = "Отзывы"
+
